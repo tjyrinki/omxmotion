@@ -370,7 +370,7 @@ static AVFormatContext *openoutput(char *url, int *index)
 	for (i = 0; i < oc->nb_streams; i++) {
 		if (oc->oformat->flags & AVFMT_GLOBALHEADER)
 			oc->streams[i]->codec->flags
-				|= CODEC_FLAG_GLOBAL_HEADER;
+				|= AV_CODEC_FLAG_GLOBAL_HEADER;
 		if (oc->streams[i]->codec->sample_rate == 0)
 			oc->streams[i]->codec->sample_rate = 48000; /* ish */
 	}
